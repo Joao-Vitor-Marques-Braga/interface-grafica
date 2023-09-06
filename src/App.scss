@@ -14,6 +14,15 @@
   }
 }
 
+@keyframes balance{
+  0%{
+    transform: rotate(20deg);
+  }
+  100%{
+    transform: rotate(50deg);
+  }
+}
+
 main{
   min-height: 100vh;
   max-width: 100vw;
@@ -21,6 +30,7 @@ main{
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: $bg-primary;
 
   .header-contaier{
     display: flex;
@@ -91,6 +101,71 @@ main{
           display: flex;
           animation: appear 250ms linear 0ms forwards;
         }
+      }
+    }
+  }
+
+  .content-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-grow: 1;
+    width: 70%;
+    padding: 32px;
+
+    .heading-container{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 50%;
+
+      :first-child{
+        align-self: flex-start;
+      }
+      :last-child{
+        align-self: flex-end;
+      }
+
+      h2{
+        font-size: 52px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+      }
+    }
+
+    .bubble{
+      background-color: #b6b6b6a6;
+      padding: 12px 16px;
+      border-radius: 100%;
+      position: absolute;
+
+      &.fire{
+        right: 20px;
+        transform: rotate(-20deg);
+        bottom: 30%;
+        font-size: 24px;
+      }
+
+      &.rocket{
+        top: 20%;
+        right: 65px;
+        font-size: 52px;
+      }
+
+      &.target{
+        top: 15%;
+        left: 100px;
+        font-size: 72px;
+        animation: balance 3s alternate 400ms infinite;
+      }
+
+      &.shop{
+        bottom: 30%;
+        left: 30px;
+        font-size: 24px;
+        transform: rotate(30deg);
       }
     }
   }
